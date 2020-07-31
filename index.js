@@ -46,3 +46,5 @@ app.post('/signin', signInController);
 app.post('/signup', signUpController);
 
 module.exports = app;
+
+// 새롭게 로직을 짜는 중.. 카피를 하다보니 이해가 가지 않고 내 것이 아닌 느낌이 든다.
