@@ -1,11 +1,25 @@
-const express = require('express')
-const app = express();
-const PORT = process.env.NODE_ENV === 'production' ? 3001: 3002 
+const express = require('express');
+const sequelize = require('./models/index.js');
 
-app.listen(PORT,()=>{
-   console.log(`server listen on ${PORT}`)
+const app = express();
+
+const port = 4000;
+
+const driver = () => {
+  sequelize.sync().then(() => {
+    console.log('초기화 완료.');
+  }).catch((err) => {
+    console.error('초기화 실패');
+    console.error(err);
+  });
+};
+
+driver();
+
+app.get('/', (req, res) => {
+  res.send('Hello World');
 })
 
-app.get('/', (req, res, next) => {
-   res.send('hello world!');
+app.listen(port, () => {
+  console.log(`server listen on ${port}`);
 });
