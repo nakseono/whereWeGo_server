@@ -1,23 +1,22 @@
 const express = require('express');
-const sequelize = require('./models/index.js');
+require('./models');
 
 const app = express();
+app.use(express.json()); // body-parser와 같은 역할을 한다.
+const session = require('express-session');
 
 const port = 4000;
 
-const driver = () => {
-  sequelize.sync().then(() => {
-    console.log('초기화 완료.');
-  }).catch((err) => {
-    console.error('초기화 실패');
-    console.error(err);
-  });
-};
-
-driver();
+app.use(
+  session({
+    secret: 'secretcode',
+    resave: false,
+    saveUninitialized: true
+  })
+);
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.send('Hello World - server test');
 })
 
 app.listen(port, () => {
