@@ -1,8 +1,9 @@
-# Where We Go ? - server
+# Where We Go ? - client
 
 ## 기획 의도
 
-이번엔 어디로 가야해? 얼마나 걸리는데? 전체적인 경로가 어떻게 돼?
+> 이번엔 어디로 가야해? <br> 얼마나 걸리는데? <br> 전체적인 경로가 어떻게 돼?<br>
+
 여행을 하다보면 위와같은 질문이 자주 나옵니다.
 
 그 질문을 해결하기위해,
@@ -28,9 +29,9 @@
 
 ## Task
 
-- 현재 CRUD까지 구현 완료된 상태
-- React에 TypeScript를 얹어 SPA 구현
-- 서버는 node.js 기반으로 node express 와 sequelize, MySQL을 이용하여 클라이언트 - 서버 - 데이터베이스 연결
+- 현재 **CRUD까지** 구현 완료된 상태
+- **React에 TypeScript**를 얹어 SPA 구현
+- 서버는 node.js 기반으로 node express 와 <br> sequelize, MySQL을 이용하여 **클라이언트 - 서버 - 데이터베이스** 연결
 - T Map API를 이용하여 웹 자체에 지도와 동선을 표현할 예정
 - 아직 개발 초기 단계라 첨부 이미지가 없습니다.
 
