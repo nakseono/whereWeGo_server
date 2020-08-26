@@ -35,6 +35,10 @@
 - T Map API를 이용하여 웹 자체에 지도와 동선을 표현할 예정
 - 아직 개발 초기 단계라 첨부 이미지가 없습니다.
 
+## Git Work Flow
+
+![gitWorkFlow](/gitWorkFlow.png)
+
 ## Project Document
 
 https://www.notion.so/nakseono/Where-We-Go-5855caad14414efa82f6006cad7c09af
