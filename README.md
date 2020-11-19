@@ -29,7 +29,7 @@
 
 - 현재 **CRUD까지** 구현 완료된 상태
 - **React에 TypeScript**를 얹어 SPA 구현
-- 서버는 node.js 기반으로 node express 와 <br> MongoDB을 이용하여 **클라이언트 - 서버 - 데이터베이스** 연결
+- 서버는 node.js 기반으로 node express 와 <br> MongoDB를 이용하여 **클라이언트 - 서버 - 데이터베이스** 연결
 - T Map API를 이용하여 웹 자체에 지도와 동선을 표현할 예정
 - 아직 개발 초기 단계라 첨부 이미지가 없습니다.
 
