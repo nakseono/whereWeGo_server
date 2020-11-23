@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10; // salt 가 몇자리인지 = 얼마나 복잡하게 암호화 할 것인지.
+const jwt = require("jsonwebtoken");
 
 const userSchema = mongoose.Schema({
   username: {
@@ -43,6 +44,27 @@ userSchema.pre("save", function (next) {
     next();
   }
 });
+
+// login에 쓰일 comparePassword 라는 Method를 여기서 만들어준다.
+userSchema.methods.comparePassword = function (plainPassword, cb) {
+  bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+    if (err) return cb(err);
+    cb(null, isMatch);
+  });
+};
+
+userSchema.methods.generateToken = function (cb) {
+  var user = this;
+
+  // jwt를 이용해서 token 생성하기
+  var token = jwt.sign(user._id.toHexString(), "secretToken");
+
+  user.token = token;
+  user.save(function (err, user) {
+    if (err) return cb(err);
+    cb(null, user);
+  });
+};
 
 const User = mongoose.model("User", userSchema);
 
